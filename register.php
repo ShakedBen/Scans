@@ -1,22 +1,17 @@
 <?php
+include 'addUser.php'
 
 if(isset($_POST["u_btn"]))
 {
-    $user=[
+    $user=array(
         'name'=$_POST["name"];
         'lastName'=$_POST["lastName"];
         'email'=_POST["email"];
         'password'=$_POST["password"];
         'cpassword'=$_POST["cpassword"];
-    ]
+    );
+   
 
-
-    $name=$_POST["name"];
-    $lastName=$_POST["lastName"];
-    $email=$_POST["email"];
-    $password=$_POST["password"];
-    $cpassword=$_POST["cpassword"];
-    
      $selectfdb=mysqli_query($conn,"SELECT * FROM users WHERE u_email='$u_email'" );
      $row=mysqli_fetch_array($selectfdb);
       if($row["u_email"]==$u_email)
@@ -72,7 +67,7 @@ if(isset($_POST["u_btn"]))
         echo "please.. complete all data";
     }
     else{
-    $insert= mysqli_query($conn, "INSERT INTO `users` (`u_name`, `u_lname`,  `u_email`, `u_password`,) VALUES ('$u_name', '$u_lname', '$u_email', '$u_password', )");
+        $this->addUser('users',$user)
      echo "<meta http-equiv='refresh' content='0; registerSuccee.php'>";
     }
 
