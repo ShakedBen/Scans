@@ -1,5 +1,5 @@
-<!-- <?php
-include 'config.php';
+<?php
+
 if(isset($_POST["u_btn"]))
 {
     $u_name=$_POST["u_name"];
@@ -58,21 +58,17 @@ if(isset($_POST["u_btn"]))
            echo "invalid last name";
          
      }
-     else if(!preg_match("/^[0-9]/i",$u_id))
-     {
-             echo "invalid id";
-     }
-   else if(empty($u_name)||empty($u_lname)||empty($u_id)||empty($u_email)||empty($u_password)||empty($u_student)||empty($u_gander))
+   else if(empty($u_name)||empty($u_lname)||empty($u_email)||empty($u_password))
     {
         echo "please.. complete all data";
     }
     else{
-    $insert= mysqli_query($conn, "INSERT INTO `users` (`u_name`, `u_lname`, `u_id`, `u_email`, `u_password`, `u_student`, `u_gander`) VALUES ('$u_name', '$u_lname', '$u_id', '$u_email', '$u_password', '$u_student', '$u_gander')");
+    $insert= mysqli_query($conn, "INSERT INTO `users` (`u_name`, `u_lname`,  `u_email`, `u_password`,) VALUES ('$u_name', '$u_lname', '$u_email', '$u_password', )");
      echo "<meta http-equiv='refresh' content='0; registerSuccee.php'>";
     }
 
 }
-?> -->
+?>
 
 <html lang="en" dir="ltr">
   <head>
