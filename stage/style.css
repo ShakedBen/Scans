@@ -42,7 +42,7 @@ td {
     background-color: #555;
   }
   .active, .collapsibleFirst:hover {
-    background-color: #d76412;
+    background-color: orangered;
   }
   .content {
     padding: 0 18px;
