@@ -2,11 +2,11 @@
 
 if(isset($_POST["u_btn"]))
 {
-    $u_name=$_POST["u_name"];
-    $u_lname=$_POST["u_lname"];
-    $u_email=$_POST["u_email"];
-    $u_password=$_POST["u_password"];
-    $u_cpassword=$_POST["u_cpassword"];
+    $name=$_POST["name"];
+    $lastName=$_POST["lastName"];
+    $email=$_POST["email"];
+    $password=$_POST["password"];
+    $cpassword=$_POST["cpassword"];
     
      $selectfdb=mysqli_query($conn,"SELECT * FROM users WHERE u_email='$u_email'" );
      $row=mysqli_fetch_array($selectfdb);

@@ -11,10 +11,10 @@ function addData($table, $data)
 	if ($table == 'users') {
 		foreach ($data as $user) {
 			$dataToInsert = array(
-				'id' => $user['id'],
 				'name' => $user['name'],
+				'lastName' => $user['lastName'],
 				'email' => $user['email'],
-				'active' => true
+				'password' => $password['password']
 			);
 			$db->insertData($table, $dataToInsert);
 			mysqli_query($db->connection, $db->query);
