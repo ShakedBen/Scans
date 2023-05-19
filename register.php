@@ -77,16 +77,16 @@ if(isset($_POST["u_btn"]))
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Sing up</title>
+    <title>הרשמה</title>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-  <title>Super-Sami Online Store</title>
+  <title>הרשמה</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
-<a href="index.php" class="navbar-brand" style="font-size:24px">Sign in</a>
+
 
 <form name="reg" action="register.php" method="post" onsubmit="return Check_password(),Check_UserName(),Check_LastName()">
     
@@ -94,28 +94,34 @@ if(isset($_POST["u_btn"]))
     
     
     <div class="login-box">
-     <h1>Sing Up</h1>
+     <h1>הרשמה</h1>
        <div class="textbox">
     <i class="fas fa-user"></i>
-<input type="text" name="u_name"  value="" placeholder="Name" required/>
+<input type="text" name="u_name"  value="" placeholder="שם" required/>
 </div>
 	<div class="textbox">
-    <input type="text" name="u_lname" placeholder="Last Name"  value="" required/>
+    <input type="text" name="u_lname" placeholder="שם משפחה"  value="" required/>
         </div>
 	<div class="textbox">
-	<input type="email" name="u_email" value="" placeholder="Your Email" required/>
+	<input type="email" name="u_email" value="" placeholder="אימייל" required/>
         </div>  
      
     <div class="textbox">
     <i class="fas fa-lock"></i>
-	<td><input type="password" name="u_password" placeholder="Password" value="" required/>
+	<td><input type="password" name="u_password" placeholder="סיסמה" value="" required/>
 	</div>
     <div class="textbox">
     <i class="fas fa-lock"></i>
-<input type="password" name="u_cpassword" placeholder="Confirm Password" value="" required/>
+<input type="password" name="u_cpassword" placeholder="אימות סיסמה" value="" required/>
     </div>
-     <input type="submit" class="btn" name="u_btn" value="sign up">
-   
+    <table>
+     <th>
+        <tr><input type="submit" class="btn" name="u_btn" value="הירשם"></tr>
+</th>
+     <th>
+        <tr><a href="index.php" class="btn" >התחברות</a></tr>
+</th>
+</table>    
 </form>
      </body>
 </html>

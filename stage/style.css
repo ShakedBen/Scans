@@ -1,0 +1,52 @@
+.buttonScans {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+    table-layout: fixed;
+    
+  }
+  .buttonScans:hover {
+    background-color: #2600ff;
+  }
+table {
+    table-layout: fixed ;
+    width: 100% ;
+  }
+td {
+    width: 25% ;
+  }
+  .collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 100%;
+  }
+  .collapsibleFirst{
+    background-color: orangered;
+  }
+
+  .active, .collapsible:hover {
+    background-color: #555;
+  }
+  .active, .collapsibleFirst:hover {
+    background-color: #d76412;
+  }
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }

@@ -41,26 +41,27 @@ if(isset($_POST["u_btn"]))
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Log in</title>
+    <title>התחברות</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="styles/style.css"/>
   </head>
   <body>
 <form action="login.php" method="post">
 <div class="login-box">
-  <h1>Login</h1>
+  <h1>התחברות</h1>
   <div class="textbox">
     <i class="fas fa-user"></i>
-    <input type="email" placeholder="Username" name="u_email" value="">
+    <input type="email" placeholder="שם משתמש" name="u_email" value="">
   </div>
 
   <div class="textbox">
     <i class="fas fa-lock"></i>
-    <input type="password" placeholder="Password" name="u_password" value="">
+    <input type="password" placeholder="סיסמה" name="u_password" value="">
   </div>
-
-  <input type="submit" class="btn" value="Sign in" name="u_btn">
-  <h3>New? click here</h3><a href="register.php" class="navbar-brand" style="font-size:24px">Sing up</a>
+<table>
+  <input type="submit" class="btn" value="התחבר" name="u_btn">
+  <a  href="register.php" class="btn" >להרשמה</a>
+</table>
   </form>
 </div>
   </body>
