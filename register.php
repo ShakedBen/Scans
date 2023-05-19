@@ -2,6 +2,15 @@
 
 if(isset($_POST["u_btn"]))
 {
+    $user=[
+        'name'=$_POST["name"];
+        'lastName'=$_POST["lastName"];
+        'email'=_POST["email"];
+        'password'=$_POST["password"];
+        'cpassword'=$_POST["cpassword"];
+    ]
+
+
     $name=$_POST["name"];
     $lastName=$_POST["lastName"];
     $email=$_POST["email"];

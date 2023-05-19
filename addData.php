@@ -19,7 +19,7 @@ function addData($table, $data)
 			$db->insertData($table, $dataToInsert);
 			mysqli_query($db->connection, $db->query);
 		}
-	} else if ($table == 'posts') {
+	} else if ($table == 'scans') {
 		foreach ($data as $post) {
 			$dataToInsert = array(
 				'id' => $post['id'],
