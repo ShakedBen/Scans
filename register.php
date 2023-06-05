@@ -1,78 +1,7 @@
 <?php
-include 'addUser.php'
-
-if(isset($_POST["u_btn"]))
-{
-    $user=array(
-        'name'=$_POST["name"];
-        'lastName'=$_POST["lastName"];
-        'email'=_POST["email"];
-        'password'=$_POST["password"];
-        'cpassword'=$_POST["cpassword"];
-    );
-   
-
-     $selectfdb=mysqli_query($conn,"SELECT * FROM users WHERE u_email='$u_email'" );
-     $row=mysqli_fetch_array($selectfdb);
-      if($row["u_email"]==$u_email)
-      {
-    echo "<h1><strong>The email is busy try one another</strong></h1>";
-      }
-      
-      
-     else if(empty($u_cpassword)||empty($u_password))
-         {
-             echo "Invalid password";
-         }
-     
-     else if($u_password!=$u_cpassword)
-     {
-         echo "Password confirmation is invalid";
-     }
-      else if (strlen($u_password) < 8) 
-          {
-       echo  "Password too short!";
-    }
-
-    else if (!preg_match("#[0-9]+#", $u_password)) 
-            {
-         echo "Password must include at least one number!";
-    }
-
-    else if (!preg_match("#[a-zA-Z]+#", $u_password)) 
-            {
-         echo  "Password must include at least one letter!";
-    }     
-     else if(strlen($u_name)==0)
-     {
-        echo "invalid name";
-     }
-        else if(strlen($u_lname)==0)
-     {
-        echo "invalid last name";
-     }
-     else if(!preg_match("/^[a-zA-Z]/i", $u_name))
-     {
-         echo "<strong>invalid  name.</strong>";
-         
-         
-     }
-      else if(!preg_match("/^[a-zA-Z]/i", $u_lname))
-     {
-           echo "invalid last name";
-         
-     }
-   else if(empty($u_name)||empty($u_lname)||empty($u_email)||empty($u_password))
-    {
-        echo "please.. complete all data";
-    }
-    else{
-        $this->addUser('users',$user)
-     echo "<meta http-equiv='refresh' content='0; registerSuccee.php'>";
-    }
-
-}
+include 'database.php';
 ?>
+
 
 <html lang="en" dir="ltr">
   <head>
@@ -86,9 +15,7 @@ if(isset($_POST["u_btn"]))
     <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
-
-
-<form name="reg" action="register.php" method="post" onsubmit="return Check_password(),Check_UserName(),Check_LastName()">
+<form name="reg" method="post" >
     
     
     
@@ -97,27 +24,27 @@ if(isset($_POST["u_btn"]))
      <h1>הרשמה</h1>
        <div class="textbox">
     <i class="fas fa-user"></i>
-<input type="text" name="u_name"  value="" placeholder="שם" required/>
+<input type="text" name="name"  value="" placeholder="שם" required/>
 </div>
 	<div class="textbox">
-    <input type="text" name="u_lname" placeholder="שם משפחה"  value="" required/>
+    <input type="text" name="lastName" placeholder="שם משפחה"  value="" required/>
         </div>
 	<div class="textbox">
-	<input type="email" name="u_email" value="" placeholder="אימייל" required/>
+	<input type="email" name="email" value="" placeholder="אימייל" required/>
         </div>  
      
     <div class="textbox">
     <i class="fas fa-lock"></i>
-	<td><input type="password" name="u_password" placeholder="סיסמה" value="" required/>
+	<td><input type="password" name="password" placeholder="סיסמה" value="" required/>
 	</div>
     <div class="textbox">
     <i class="fas fa-lock"></i>
-<input type="password" name="u_cpassword" placeholder="אימות סיסמה" value="" required/>
+<input type="password" name="cpassword" placeholder="אימות סיסמה" value="" required/>
     </div>
     <table>
      <th>
-        <tr><input type="submit" class="btn" name="u_btn" value="הירשם"></tr>
-</th>
+        <tr><input type="submit" class="btn" name="onSubmitRegisterButton" value="הירשם"></tr>
+        </th>
      <th>
         <tr><a href="index.php" class="btn" >התחברות</a></tr>
 </th>

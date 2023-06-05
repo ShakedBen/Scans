@@ -1,43 +1,6 @@
-<!-- <?php
-include 'config.php';
-
-if($login==1)
-{
-     echo "<meta http-equiv='refresh' content='0; url=profile.php'>";
-}
-else{
-    
-
-if(isset($_POST["u_btn"]))
-{
-    $u_email=$_POST['u_email'];
-    $u_password=$_POST['u_password'];
-    if(empty($u_email)||empty($u_password))
-    {
-        echo "please complet all data";
-    }
-    else {
-    $selectfdb=mysqli_query($conn,"SELECT * FROM users WHERE u_email='$u_email' AND u_password='$u_password'" );
-    $row=mysqli_fetch_array($selectfdb);
-    if($row["u_email"]==$u_email && $row["u_password"]==$u_password)
-    {
-        setcookie('uid',$row["u_id"],time()+(3600*24));
-        setcookie('login',1,time()+(3600*24));
-        
-        echo "<meta http-equiv='refresh' content='0; url=profile.php'>";
-    }
-    else{
-        echo "Email or password incorrect";
-    }
-    }
-}
-
-
-
+<?php
+include "database.php";
 ?>
- -->
-
-
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -46,20 +9,20 @@ if(isset($_POST["u_btn"]))
 	<link rel="stylesheet" href="styles/style.css"/>
   </head>
   <body>
-<form action="login.php" method="post">
+<form action="" method="post">
 <div class="login-box">
   <h1>התחברות</h1>
   <div class="textbox">
     <i class="fas fa-user"></i>
-    <input type="email" placeholder="שם משתמש" name="u_email" value="">
+    <input type="email" placeholder="שם משתמש" name="email" value="">
   </div>
 
   <div class="textbox">
     <i class="fas fa-lock"></i>
-    <input type="password" placeholder="סיסמה" name="u_password" value="">
+    <input type="password" placeholder="סיסמה" name="password" value="">
   </div>
 <table>
-  <input type="submit" class="btn" value="התחבר" name="u_btn">
+  <input type="submit" class="btn" value="התחבר" name="onSubmitLoginButton">
   <a  href="register.php" class="btn" >להרשמה</a>
 </table>
   </form>
@@ -67,4 +30,3 @@ if(isset($_POST["u_btn"]))
   </body>
 </html>
 
-<?php }?>
